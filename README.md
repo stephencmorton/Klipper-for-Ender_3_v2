@@ -146,6 +146,10 @@ Add the following code to your `printer.cfg`:
     `x_offset: -42`
     `y_offset: -10`
 
+  In the `stepper_z` section, ensure that ~~endstop_pin: ^PA7~~ is commented out and replaced with `endstop_pin: probe:z_virtual_endstop`.
+
+  _This tells Klipper to use the BLTouch (not the switch on the Ender) to home the z-axis. Klipper does not have a setting to calibrate the offset between "switch z-zero" and "BLTouch z-sero" and you would otherwise have to precisely adjust the switch height and bed height (via the screws) to be identical._
+
 Also check this [video](https://www.youtube.com/watch?v=ABsdnkP4iwQ)
 
 ## Probe calibration
